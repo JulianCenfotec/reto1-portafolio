@@ -2,9 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--Configuramos el meta para una mejor experiencia con los telefonos moviles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mascotas - Gatitos</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <!-- uso de técnicas para mejorar la velocidad de conexión a recursos externos-->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -97,8 +101,13 @@
         </section>
         <!-- Mala práctica: Imágenes sin tamaño especificado -->
         <!--Le fijamos un tamaño fijo y lo movemos dentro de la estructura de la pagina-->
+        <!-- Acá proporcionamos versiones optimizadas apra diferentes resoluciones-->
         <section class="gallery">
-            <img src="imgs/gato-naranja.webp"  alt="Gatito sin tamaño " width="480">
+            <picture>
+                <source srcset="imgs/gato-naranja-small.webp" media="(max-width: 600px)">
+                <source srcset="imgs/gato-naranja.webp">
+                <img src="imgs/gato-naranja.webp" alt="Gatito Naranja" width="300">
+            </picture>
         </section>
     </main>
 
